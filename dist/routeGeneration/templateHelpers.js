@@ -58,7 +58,7 @@ function validateEnum(enumValue, name, members) {
     }
     var existValue = members.filter(function (m) { return m === enumValue; });
     if (!existValue || !enumValue.length || !existValue.length) {
-        throw new InvalidRequestException(name + ' ' + members.join(','));
+        throw new InvalidRequestException(name + ' should be one of the following; ' + members.join(', '));
     }
     return existValue[0];
 }
